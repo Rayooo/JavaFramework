@@ -13,7 +13,8 @@ public class Config {
     @Bean
     public LettuceConnectionFactory connectionFactory() {
         LettuceConnectionFactory connectionFactory = new LettuceConnectionFactory();
-        connectionFactory.setHostName("localhost");
+        connectionFactory.setHostName("myserver");
+        connectionFactory.setPassword("defaultPassword");
         connectionFactory.setPort(6379);
         return connectionFactory;
     }
