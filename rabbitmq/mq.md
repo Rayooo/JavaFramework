@@ -1,6 +1,10 @@
 ## RabbitMQ
 
-RabbitMQ 即一个消息队列，主要是用来实现应用程序的异步和解耦，同时也能起到消息缓冲，消息分发的作用。RabbitMQ使用的是AMQP协议，它是一种二进制协议。默认启动端口 5672。
+基础概念http://www.jianshu.com/p/b26336fd1e90
+
+MQ主要用来解决两个或多个系统需要同步数据，异构系统的不同进程互相调用，通讯。
+
+AMQP，即Advanced Message Queuing Protocol，高级消息队列协议，是应用层协议的一个开放标准，为面向消息的中间件设计。消息中间件主要用于组件之间的解耦，消息的发送者无需知道消息使用者的存在，反之亦然。AMQP的主要特征是面向消息、队列、路由（包括点对点和发布/订阅）、可靠性、安全。RabbitMQ是一个开源的AMQP实现，服务器端用Erlang语言编写。主要是用来实现应用程序的异步和解耦，同时也能起到消息缓冲，消息分发的作用。默认启动端口 5672。
 
 ![MQ结构](1.png)
 
@@ -62,4 +66,6 @@ ERROR: epmd error for host RaydeMacBook-Pro: timeout (timed out)
 
 ```
 
-5.设置生产者和消费者，见代码
+5.设置生产者和消费者，见代码helloworld/Recv.java & Send.java
+
+6.Spring Boot整合RabbitMQ，见helloSpring/
