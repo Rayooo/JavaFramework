@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List samePassword(User user) {
-//        PageHelper.startPage(user.getPageNo(),user.getPageSize());
+        PageHelper.startPage(user.getPageNo(),user.getPageSize());
         return userDao.samePassword(user);
     }
 
