@@ -10,15 +10,7 @@ import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Copyright © 2017 华思科互联网科技有限公司. All rights reserved.
- *
- * @Title:
- * @Prject: mq
- * @Package: helloSpring
- * @Description:
- * @author: Ray
- * @date: 2017/4/25 15:07
- * @version: V1.0
+ * 2017/4/25 15:07
  */
 @Component
 public class Runner implements CommandLineRunner {
