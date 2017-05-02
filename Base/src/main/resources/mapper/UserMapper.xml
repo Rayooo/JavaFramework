@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ray.dao.UserDao">
+    <sql id="BaseColumnList">id, username, password</sql>
+
+    <!--com.ray.domain.User 可以使用typeAlias进行别名-->
+    <resultMap id="BaseResultMap" type="com.ray.domain.User">
+        <result column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="username" property="userName" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <insert id="addUser" parameterType="com.ray.domain.User">
+        INSERT INTO user (<include refid="BaseColumnList"/> ) VALUES 
+            (#{id}, #{userName}, #{password})
+    </insert>
+
+    <select id="getUserById" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <select id="samePassword" parameterType="com.ray.domain.User" resultMap="BaseResultMap">
+        SELECT * FROM user WHERE password = #{password}
+    </select>
+
+
+</mapper>
