@@ -36,6 +36,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public PageInfo<User> samePassword(User user) {
         PageHelper.startPage(user.getPageNo(),user.getPageSize());
+        //todo 这里分页有问题，会重复分页
         PageInfo<User> page = new PageInfo<>(userDao.samePassword(user));
         return page;
     }

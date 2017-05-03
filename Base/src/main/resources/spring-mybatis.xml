@@ -29,9 +29,9 @@
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useUnicode=true&amp;characterEncoding=utf8" />
+        <property name="url" value="jdbc:mysql://myserver:3306/mybatis?useUnicode=true&amp;characterEncoding=utf8" />
         <property name="username" value="root" />
-        <property name="password" value="root" />
+        <property name="password" value="defaultPassword" />
         <!-- 初始化连接大小 -->
         <property name="initialSize" value="10"/>
         <!-- 连接池最大数量 -->
