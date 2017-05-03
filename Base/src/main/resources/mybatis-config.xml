@@ -30,7 +30,7 @@
             <!-- 增加了一个`params`参数来配置参数映射，用于从Map或ServletRequest中取值 -->
             <!-- 可以配置pageNum,pageSize,count,pageSizeZero,reasonable,不配置映射的用默认值 -->
             <!-- 不理解该含义的前提下，不要随便复制该配置 -->
-            <property name="params" value="pageNum=start;pageSize=limit;" />
+            <!--<property name="params" value="pageNum=start;pageSize=limit;" />-->
         </plugin>
     </plugins>
 

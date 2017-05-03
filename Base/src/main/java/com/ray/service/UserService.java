@@ -1,5 +1,6 @@
 package com.ray.service;
 
+import com.github.pagehelper.PageInfo;
 import com.ray.domain.User;
 
 import java.util.List;
@@ -13,6 +14,6 @@ public interface UserService {
 
     User getUserById(String id);
 
-    List samePassword(User user);
+    PageInfo<User> samePassword(User user);
 
 }

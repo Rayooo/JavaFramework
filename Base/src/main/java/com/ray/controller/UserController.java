@@ -1,5 +1,6 @@
 package com.ray.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.ray.controller.base.BaseController;
 import com.ray.domain.User;
 import com.ray.service.UserService;
@@ -41,8 +42,8 @@ public class UserController extends BaseController {
     }
 
     @RequestMapping("/samePassword")
-    public BaseResponse<List> samePassword(User user) {
-        BaseResponse<List> response = new BaseResponse<>();
+    public BaseResponse<PageInfo<User>> samePassword(User user) {
+        BaseResponse<PageInfo<User>> response = new BaseResponse<>();
         response.setResult(userService.samePassword(user));
         return response;
     }

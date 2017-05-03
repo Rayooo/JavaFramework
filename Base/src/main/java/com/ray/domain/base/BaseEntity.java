@@ -1,4 +1,4 @@
-package com.ray.domain;
+package com.ray.domain.base;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

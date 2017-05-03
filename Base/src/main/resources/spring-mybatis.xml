@@ -73,6 +73,9 @@
     <bean id="commonTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
     </bean>
+
+    <!-- 注解式aop拦截配置 -->
+    <aop:aspectj-autoproxy proxy-target-class="true" />
     <!-- 使用annotation定义事务 -->
     <tx:annotation-driven transaction-manager="commonTransactionManager" proxy-target-class="true" />
 

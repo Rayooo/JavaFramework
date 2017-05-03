@@ -1,6 +1,7 @@
 package com.ray.service.impl;
 
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.ray.dao.UserDao;
 import com.ray.domain.User;
 import com.ray.service.UserService;
@@ -33,9 +34,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List samePassword(User user) {
+    public PageInfo<User> samePassword(User user) {
         PageHelper.startPage(user.getPageNo(),user.getPageSize());
-        return userDao.samePassword(user);
+        PageInfo<User> page = new PageInfo<>(userDao.samePassword(user));
+        return page;
     }
 
 

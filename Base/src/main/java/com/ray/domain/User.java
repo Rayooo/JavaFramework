@@ -1,5 +1,7 @@
 package com.ray.domain;
 
+import com.ray.domain.base.BaseEntity;
+
 import java.io.Serializable;
 
 /**
