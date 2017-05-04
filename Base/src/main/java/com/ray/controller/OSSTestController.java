@@ -18,7 +18,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/oss")
 public class OSSTestController {
-
+/*
     @Resource
     private OSSClient ossClient;
 
@@ -41,5 +41,5 @@ public class OSSTestController {
 
         return OSSUtil.generateUrl(fileName);
     }
-
+*/
 }

@@ -12,7 +12,7 @@ import java.util.Date;
  */
 @Configuration
 public class OSSUtil {
-
+/*
     private static final String endPoint = "oss-cn-shanghai.aliyuncs.com";
     // accessKey请登录https://ak-console.aliyun.com/#/查看
     private static final String accessKeyId = "";
@@ -56,4 +56,5 @@ public class OSSUtil {
         URL url = getOssClient().generatePresignedUrl(bucketName, fileName, expiration);
         return url.toString();
     }
+    */
 }
