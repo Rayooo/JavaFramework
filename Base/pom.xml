@@ -97,6 +97,15 @@
 	</dependencies>
 
 	<build>
+		<!--防止intellij等在Source目录下忽略.xml文件，防止编译不加入classes-->
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*Mapper.xml</include>
+				</includes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

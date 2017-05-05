@@ -60,8 +60,8 @@
     <bean id="commonSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="classpath:mybatis-config.xml" />
         <property name="dataSource" ref="dataSource" />
-        <!-- 自动扫描mapping.xml文件 -->
-        <property name="mapperLocations" value="classpath*:mapper/*Mapper.xml" />
+        <!-- 自动扫描mapping.xml文件,这里的路径主要是target中编译完的路径 -->
+        <property name="mapperLocations" value="classpath*:**/mapper/*Mapper.xml" />
     </bean>
     <!-- MyBatis 扫描DAO层 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
