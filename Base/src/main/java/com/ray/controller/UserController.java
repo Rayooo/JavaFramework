@@ -23,7 +23,7 @@ public class UserController extends BaseController {
     @Resource
     private UserService userService;
 
-    @RequestMapping("/")
+    @RequestMapping("/home")
     public String home(){
         return "start success";
     }

@@ -19,7 +19,7 @@ public class OSSUtil {
 
     private static final String accessKeySecret = "";
 
-    private static final String bucketName = "";
+    private static final String bucketName = "rayray";
 
     private volatile static OSSClient ossClient;
 
