@@ -43,3 +43,6 @@ public void setDessert(Dessert dessert){
   	this.dessert = dessert;
 }
 ```
+Environment，注入外部的值，通过它可以获取到设置在properties中的值，也可以获取到哪些profile处于激活的状态。
+
+@Value("${xxx.xxx}")注入properties中的值，不过要配置一个PropertySourcesPlaceholderConfigurer bean。或是使用xml   \<context: property-placeholder /\> 

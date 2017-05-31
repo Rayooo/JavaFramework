@@ -24,3 +24,26 @@ public Notepad notepad() {
 
 <bean id = "notepad" class = "com.myapp.Notepad" scope = "prototype" />
 ```
+注意一下proxyMode
+
+```java
+@Component
+@Scope(value=WebApplicationContext.SCOPE_SESSION, proxyMode=ScopedProxyMode.INTERFACES)
+public ShoppingCart cart() {....}
+
+
+@Component
+public class StoreService{
+  	
+  	private ShoppingCart shoppingCart;
+  	
+  	@Autowired
+  	public void setShoppingCart(ShoppingCart shoppingCart) {
+      	this.shoppingCart = shoppingCart;
+  	}
+}
+```
+
+StoreService是一个单例的bean，但是ShoppingCart bean是会话作用域的，spring应用上下文加载的时候，加载StoreService，而此时ShoppingCart并不存在。另外，系统中会有多个ShoppingCart实例，我们并不想让Spring注入某个固定的ShoppingCart实例到StoreService中，我们希望StoreService处理购物车功能时，他所使用的ShoppingCart实例刚好是当前会话所对应的那一个
+
+实际上，Spring并不会将时机的ShoppingCart  bean 注入到StoreService中，Spring会注入一个到ShoppingCart bean的代理，这个代理会暴露与ShoppingCart相同的方法，所以StoreService认为它就是一个购物车。但是当StoreService调用ShoppingCart的方法时，代理会对其进行懒解析并将调用委托给会话作用域内的真正的ShoppingCart bean。
