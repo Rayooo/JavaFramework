@@ -50,12 +50,12 @@ public class LogAspect {
         System.out.println("异常通知 AfterThrowing");
     }
 
-//    环绕通知
+//    环绕通知，可以实现失败后重试
 //    @Around("logAop()")
     public void logAround(ProceedingJoinPoint jp){
         try {
             System.out.println("自定义前置通知");
-            jp.proceed();
+            jp.proceed();       //需要手动调用
             System.out.println("后置");
         } catch (Throwable throwable) {
             throwable.printStackTrace();
