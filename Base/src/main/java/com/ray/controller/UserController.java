@@ -1,7 +1,6 @@
 package com.ray.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.ray.controller.base.BaseController;
 import com.ray.domain.User;
 import com.ray.service.UserService;
 import com.ray.util.BaseResponse;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
  * 2017/5/2 16:08
@@ -18,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/")
-public class UserController extends BaseController {
+public class UserController {
 
     @Resource
     private UserService userService;

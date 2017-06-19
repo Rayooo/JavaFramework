@@ -1,6 +1,5 @@
 package com.ray.controller;
 
-import com.ray.controller.base.BaseController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @RequestMapping("/session")
-public class SessionTestController extends BaseController {
+public class SessionTestController {
 
     @RequestMapping("/set")
     public String set(HttpServletRequest request){

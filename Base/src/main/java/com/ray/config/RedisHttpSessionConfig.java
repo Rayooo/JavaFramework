@@ -14,7 +14,7 @@ public class RedisHttpSessionConfig {
     public LettuceConnectionFactory connectionFactory(){
         LettuceConnectionFactory connectionFactory = new LettuceConnectionFactory();
         connectionFactory.setHostName("myserver");
-        connectionFactory.setPassword("defaultPassword");
+        connectionFactory.setPassword("ccY7jgeXoWDb96sV");
         connectionFactory.setPort(6379);
         return connectionFactory;
     }
